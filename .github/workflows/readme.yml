@@ -15,7 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: echo "update $(date)" >> README.md
+      - run: |
+          echo "海外数据采集服务介绍：" > README.md
+          echo "" >> README.md
+          echo "AI时代，必须有高质量的数据采集服务搭配才可以。本人提供海外数据采集代采集服务！只要是有海外的数据采集需求：脸书、ins、reddit、X、youtube、TIKTOK、电报等等，也可以为您安装龙虾，搭建系统，数据分析，都可以来合作。" >> README.md
+          echo "1到5天交付！按次收费超灵活，支持软件/网站/程序开发，数据稳、接口稳，适合舆情监控、市场分析、社交机器人等场景。" >> README.md
+          echo "私聊可定制功能，全程技术陪跑！48小时内响应问题，7天内免费修复非人为故障。" >> README.md
+          echo "靠谱合作不忽悠，有需求直接私聊！为您解决问题，为您排忧解难，为您保驾护航。" >> README.md
 
       - run: |
           git config user.name github-actions
@@ -23,5 +29,5 @@ jobs:
 
       - run: |
           git add README.md
-          git diff --cached --quiet || git commit -m "auto update"
+          git diff --cached --quiet || git commit -m "auto update README with service info"
           git push
